@@ -1,0 +1,5 @@
+<structure name="query">
+    <field minOccurs="0" name="content" type="java.lang.String"/>
+    <field minOccurs="0" name="name" type="java.lang.String"/>
+    <field minOccurs="0" name="height" type="java.lang.Long"/>
+</structure>

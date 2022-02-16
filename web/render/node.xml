@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-01-25T16:25:56.737+01:00" lastModified="2022-02-16T14:56:07.756+01:00" leaf="true" version="25">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.String.upper</references>
+    <references>java.lang.Long</references>
+    <references>nabu.libs.misc.okapiBarcode.Services.toImage</references>
+    <references>nabu.libs.misc.okapiBarcode.Services.toSvg</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.String.conventionize</references>
+    <references>java.io.InputStream</references>
+</node>

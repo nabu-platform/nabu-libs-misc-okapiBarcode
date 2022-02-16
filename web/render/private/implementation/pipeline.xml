@@ -1,0 +1,4 @@
+<structure interface="nabu.libs.misc.okapiBarcode.web.render:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+</structure>

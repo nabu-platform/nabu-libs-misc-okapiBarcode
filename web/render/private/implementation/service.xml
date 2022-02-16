@@ -1,0 +1,284 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="7dd16958-ec19-4ef4-8e5f-55347cc64a55"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="c2b685ca-1e90-4f5a-a70f-d75d2dafc773"
+			label="input/query/content != null"
+			lineNumber="2"
+			query="input/path/type">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="36e745ac-81bb-48df-b298-3fb076ebddaf"
+				label="&quot;svg&quot;"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d6bc6448-7e06-4d01-ae9c-90354ee26d97"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>image/svg+xml</from>
+				<to>output/meta/contentType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b0729c43-1c63-45fe-a6d3-413fc4d51961"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/name</from>
+				<to>output/meta/fileName</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d5b3348e-3e41-4af4-b9a0-d616459a41fd"
+					serviceId="nabu.libs.misc.okapiBarcode.Services.toSvg"
+					resultName="resultbb59cbd3473345cbbbab950de55c44bc"
+					temporaryMapping="true"
+					x="619"
+					y="212"
+					invocationOrder="2"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e078fbb5-17b3-4169-b908-953c2924aa3e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/query/content</from>
+					<to>string</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d4c41894-dcd7-435c-80ce-54297a335ff7"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result30171255b23f41cf973a2e69877c5b4d/upper</from>
+					<to>type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4249642d-334d-4abc-b9a8-1b3cb597df50"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/query/height</from>
+					<to>barHeight</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="3459aa93-b5ba-427c-8e4b-61c510fa5b8d"
+					serviceId="nabu.utils.String.conventionize"
+					resultName="resultfbdbd2b02be842e997210035d0162684"
+					temporaryMapping="true"
+					x="80"
+					y="263"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3c312773-c215-48e3-8623-1449fda38720"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/path/code</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f9eb676e-ba99-444f-9fd9-91000de4a508"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>LOWER_CAMEL_CASE</from>
+					<to>from</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7edd08e4-1784-4010-9d41-0ab41eccbd15"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UNDERSCORE</from>
+					<to>to</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="f2bb4d2b-2036-46af-8156-b9077d3a44a2"
+					serviceId="nabu.utils.String.upper"
+					resultName="result30171255b23f41cf973a2e69877c5b4d"
+					temporaryMapping="true"
+					x="418"
+					y="373"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="014a1939-3395-42ce-a8bf-8cbfe749c99b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultfbdbd2b02be842e997210035d0162684/conventionized</from>
+					<to>string</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dcab36bf-07b7-4899-9486-85e6dede29a6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultbb59cbd3473345cbbbab950de55c44bc/svg</from>
+				<to>output/content</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="16b42cb9cc60404a85d060aed97b0c78"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="74118a4f2d6d48e6a68ff9531b83196f"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>="image/" + input/path/type</from>
+				<to>output/meta/contentType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6dec384a2ce149eda1debda90f26a2a2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/query/name</from>
+				<to>output/meta/fileName</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="86bb71c6d3614e63b43a1295b09523ec"
+					serviceId="nabu.utils.String.conventionize"
+					resultName="resultfbdbd2b02be842e997210035d0162684"
+					temporaryMapping="true"
+					x="80"
+					y="263"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="901941da14224c7b80effdd7b0d10029"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/path/code</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a096c9c852c441968271ee8354e86a78"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>LOWER_CAMEL_CASE</from>
+					<to>from</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e80b05ffb6ed495785be0b9e16cd1538"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UNDERSCORE</from>
+					<to>to</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="f28c0ad16b0b4eccbf8a6e95e7b881ce"
+					serviceId="nabu.utils.String.upper"
+					resultName="result30171255b23f41cf973a2e69877c5b4d"
+					temporaryMapping="true"
+					x="418"
+					y="373"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0ff2eb16f7064ae791936dd5d7953006"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultfbdbd2b02be842e997210035d0162684/conventionized</from>
+					<to>string</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="eb99782e-ecc2-49b8-94bf-4c3642f807bf"
+					serviceId="nabu.libs.misc.okapiBarcode.Services.toImage"
+					resultName="resultac04cc84a95d45da95851298c70cf898"
+					temporaryMapping="true"
+					x="417"
+					y="66"
+					invocationOrder="2"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b7fbc637-8b6a-4a8f-81cc-0cbe8ef2420d"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/query/content</from>
+					<to>string</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f8f9fcbe-1fed-4e0b-b4e1-bd6b8035fda0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result30171255b23f41cf973a2e69877c5b4d/upper</from>
+					<to>type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ca7e7e48-42da-4ee0-95bf-25aa722944d6"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>="image/" + input/path/type</from>
+					<to>contentType</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="079149b3-7b32-4268-a0b4-8981a5d20d92"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/query/height</from>
+					<to>barHeight</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1cbd2c78-fec9-49e2-a827-5eead9a05ec8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultac04cc84a95d45da95851298c70cf898/image</from>
+				<to>output/content</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
